@@ -1,10 +1,13 @@
-import logo from './logo.svg';
+import Canvasviewport from './SET2.js'
 import './App.css';
+
 
 function App() {
   return (
     <div className="App">
-      sad
+      <header className="CanvasHolder">
+        <Canvasviewport />
+      </header>
     </div>
   );
 }
