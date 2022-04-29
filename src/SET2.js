@@ -1,22 +1,43 @@
 import filePath from './SET2.glb'
-import React, { Suspense, useRef } from 'react'
-import { useGLTF, OrbitControls, Loader } from '@react-three/drei'
-import { Canvas } from '@react-three/fiber'
+import React, { Suspense, useRef, useState } from 'react'
+import { Html, useGLTF, OrbitControls, Loader, PerspectiveCamera, shaderMaterial } from '@react-three/drei'
+
+import { Canvas, extend, useFrame } from '@react-three/fiber'
+import { Color, AdditiveBlending } from 'three'
+import glsl from 'babel-plugin-glsl/macro'
+//import { useSpring, config } from 'react-spring'
 
 
 function Model({ ...props }) {
   const group = useRef()
   const { nodes, materials } = useGLTF(filePath)
+  const [hovered, setHover] = useState(false)
+  const [active, setActive] = useState(false)
+
+  const portalMaterial = useRef()
+  useFrame((state, delta) => (portalMaterial.current.uTime += delta))
+
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null} position={[0, -0.5, 1]}>
+
       <group position={[0, 0, 0]} rotation={[0, 0, 0]}>
         <ambientLight intensity={2} decay={2} color="#eaff8e" rotation={[-Math.PI / 2, 0, 0]} />
       </group>
+
       <group position={[9.25, 9.11, 6.44]} rotation={[0, -0.66, -0.75]}>
         <ambientLight intensity={0.12} decay={2} color="#ffa007" rotation={[-Math.PI / 2, 0, 0]} />
       </group>
+
       <mesh geometry={nodes['rock-with_bonsai'].geometry} material={materials['base-grey_rock']} position={[-0.46, 0.81, 1.06]} rotation={[0.57, 1.56, -0.57]} scale={[0.2, 0.14, 0.17]} />
-      <mesh geometry={nodes['portal-plane'].geometry} material={nodes['portal-plane'].material} position={[1.21, 1.31, -1.56]} rotation={[Math.PI / 2, 0, 0.67]} scale={[0.45, 1, 1]} />
+
+      <mesh geometry={nodes['portal-plane'].geometry}
+
+        position={[1.21, 1.40, -1.56]}
+        rotation={[Math.PI / 2, 0, 0.60]}
+        scale={[0.50, 0, 1]}>
+        <portalMaterial ref={portalMaterial} blending={AdditiveBlending} uColorStart="hotpink" uColorEnd="white" />
+      </mesh>
+
       <mesh geometry={nodes['rock-with_bonsai001'].geometry} material={materials.OH_Outline_Material} position={[-0.46, 0.81, 1.06]} rotation={[0.57, 1.56, -0.57]} scale={[0.2, 0.14, 0.17]} />
       <group position={[-0.39, 1.2, 1.05]} rotation={[0.7, 1.52, -0.77]} scale={[0.2, 0.14, 0.17]}>
         <mesh geometry={nodes.Icosphere014.geometry} material={materials.OH_Outline_Material} />
@@ -40,7 +61,7 @@ function Model({ ...props }) {
         <mesh geometry={nodes.Cube003_2.geometry} material={materials['black.001']} />
         <mesh geometry={nodes.Cube003_3.geometry} material={materials['white.001']} />
       </group>
-      <group position={[1.03, 2.08, -1.56]} rotation={[1, 0.75, 0.76]}>
+      <group position={[1.03, 2.08, -1.61]} rotation={[1, 0.75, 0.76]}>
         <mesh geometry={nodes.Plane.geometry} material={materials.white} />
         <mesh geometry={nodes.Plane_1.geometry} material={materials.OH_Outline_Material} />
       </group>
@@ -48,11 +69,11 @@ function Model({ ...props }) {
         <mesh geometry={nodes.Plane011.geometry} material={materials.white} />
         <mesh geometry={nodes.Plane011_1.geometry} material={materials.OH_Outline_Material} />
       </group>
-      <group position={[0.89, 2.18, -1.65]} rotation={[1, 0.75, 0.75]}>
+      <group position={[0.89, 2.18, -1.74]} rotation={[1, 0.75, 0.75]}>
         <mesh geometry={nodes.Plane004.geometry} material={materials.white} />
         <mesh geometry={nodes.Plane004_1.geometry} material={materials.OH_Outline_Material} />
       </group>
-      <group position={[1.41, 2.16, -1.38]} rotation={[1, 0.75, 0.75]}>
+      <group position={[1.41, 2.16, -1.30]} rotation={[1, 0.75, 0.75]}>
         <mesh geometry={nodes.Plane005.geometry} material={materials.white} />
         <mesh geometry={nodes.Plane005_1.geometry} material={materials.OH_Outline_Material} />
       </group>
@@ -263,11 +284,22 @@ function Model({ ...props }) {
         <mesh geometry={nodes.Cylinder001.geometry} material={materials['grass-color']} />
         <mesh geometry={nodes.Cylinder001_1.geometry} material={materials.OH_Outline_Material} />
       </group>
-      <group position={[1.67, 1.12, -0.7]} rotation={[0, 1.29, 0]} scale={0.07}>
+
+      <group
+        position={[1.67, 1.12, -0.7]}
+        rotation={[0, 1.29, 0]}
+        onPointerOver={(event) => setHover(true)}
+        onPointerOut={(event) => setHover(false)}
+        onClick={() => setActive(!active)}
+        scale={hovered ? '0.1' : '0.07'}>
+        <Html style={{ display: active ? 'block' : 'none' }}>
+          <h1>hello</h1>
+        </Html>
         <mesh geometry={nodes.Cube002.geometry} material={materials['jap-hand-paint-pattern']} />
         <mesh geometry={nodes.Cube002_1.geometry} material={materials['lamp-top-black']} />
         <mesh geometry={nodes.Cube002_2.geometry} material={materials.OH_Outline_Material} />
       </group>
+
       <group position={[1.69, 1.03, -0.59]} rotation={[-Math.PI, 1.55, -Math.PI]} scale={0.03}>
         <mesh geometry={nodes.Cube005.geometry} material={materials['jap-hand-paint-pattern']} />
         <mesh geometry={nodes.Cube005_1.geometry} material={materials['lamp-top-black']} />
@@ -289,16 +321,49 @@ function Model({ ...props }) {
     </group>
   )
 }
+extend({
+  PortalMaterial: shaderMaterial(
+    { uTime: 0, uColorStart: new Color('hotpink'), uColorEnd: new Color('white') },
+    `
+    varying vec2 vUv;
+    void main() {
+      vec4 modelPosition = modelMatrix * vec4(position, 1.0);
+      vec4 viewPosition = viewMatrix * modelPosition;
+      vec4 projectionPosition = projectionMatrix * viewPosition;
+      gl_Position = projectionPosition;
+      vUv = uv;
+    }`,
+    glsl`
+    #pragma glslify: cnoise3 = require(glsl-noise/classic/3d.glsl) 
+    uniform float uTime;
+    uniform vec3 uColorStart;
+    uniform vec3 uColorEnd;
+    varying vec2 vUv;
+    void main() {
+      vec2 displacedUv = vUv + cnoise3(vec3(vUv * 7.0, uTime * 0.1));
+      float strength = cnoise3(vec3(displacedUv * 5.0, uTime * 0.2));
+      float outerGlow = distance(vUv, vec2(0.5)) * 4.0 - 1.4;
+      strength += outerGlow;
+      strength += step(-0.2, strength) * 0.8;
+      strength = clamp(strength, 0.0, 1.0);
+      vec3 color = mix(uColorStart, uColorEnd, strength);
+      gl_FragColor = vec4(color, 1.0);
+    }`,
+  ),
+})
+
 
 useGLTF.preload(filePath)
 
 export default function Canvasviewport() {
   return (
     <>
-      <Canvas>
+      <Canvas >
         <Suspense fallback={null}>
-          <OrbitControls />
-          <Model></Model>
+          <PerspectiveCamera position={[0, -1.2, -1]} fov={70} >
+            <OrbitControls />
+            <Model ></Model>
+          </PerspectiveCamera>
         </Suspense>
       </Canvas>
       <Loader />
