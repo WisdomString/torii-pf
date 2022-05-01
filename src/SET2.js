@@ -6,9 +6,16 @@ import { Canvas, extend, useFrame } from '@react-three/fiber'
 import { Color, AdditiveBlending } from 'three'
 import glsl from 'babel-plugin-glsl/macro'
 //import { useSpring, config } from 'react-spring'
-
+import { Howl } from 'howler';
+import Riviere from './music/Riviere.mp3'
 
 function Model({ ...props }) {
+  var sound = new Howl({
+    src: [Riviere],
+    volume: 0.5,
+  });
+  sound.once();
+
   const group = useRef()
   const { nodes, materials } = useGLTF(filePath)
   const [hovered, setHover] = useState(false)
@@ -355,9 +362,12 @@ extend({
 
 useGLTF.preload(filePath)
 
+
+
 export default function Canvasviewport() {
   return (
     <>
+
       <Canvas >
         <Suspense fallback={null}>
           <PerspectiveCamera position={[0, -1.2, -1]} fov={70} >
@@ -368,6 +378,7 @@ export default function Canvasviewport() {
       </Canvas>
       <Loader />
     </>
+
   )
 }
 
