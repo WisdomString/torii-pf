@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/torii-pf/static/css/main.a1acdfb5.css",
-    "main.js": "/torii-pf/static/js/main.f4879c89.js",
+    "main.js": "/torii-pf/static/js/main.b549b741.js",
     "static/js/787.5e31bf6a.chunk.js": "/torii-pf/static/js/787.5e31bf6a.chunk.js",
     "static/media/pastel_sky.jpg": "/torii-pf/static/media/pastel_sky.e713f855d70cf1236237.jpg",
     "static/media/SET2.glb": "/torii-pf/static/media/SET2.f7d00d6fc1aa5ffb5c54.glb",
     "static/media/Riviere.mp3": "/torii-pf/static/media/Riviere.d8e1eb9fc6a34c320440.mp3",
+    "static/media/lanterns.glb": "/torii-pf/static/media/lanterns.f41523876a34efc8858a.glb",
     "index.html": "/torii-pf/index.html",
     "main.a1acdfb5.css.map": "/torii-pf/static/css/main.a1acdfb5.css.map",
-    "main.f4879c89.js.map": "/torii-pf/static/js/main.f4879c89.js.map",
+    "main.b549b741.js.map": "/torii-pf/static/js/main.b549b741.js.map",
     "787.5e31bf6a.chunk.js.map": "/torii-pf/static/js/787.5e31bf6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a1acdfb5.css",
-    "static/js/main.f4879c89.js"
+    "static/js/main.b549b741.js"
   ]
 }
