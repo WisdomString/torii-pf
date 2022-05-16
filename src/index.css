@@ -12,7 +12,131 @@ body {
 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: caviar;
+  src: url(./fonts/caviar_dreams.woff);
+}
+
+.card {
+  height: 70vh;
+  width: 50vw;
+  font-family: caviar;
+
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+
+}
+
+.card-header {
+  font-family: caviar;
+  pointer-events: none;
+  font-weight: bold;
+  display: flex;
+  /* check this */
+  justify-content: center;
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 2%;
+}
+
+.card_content_p {
+  width: '100%';
+  justify-content: 'center';
+  text-align: center;
+  display: 'flex';
+  font-size: x-large;
+}
+
+.card_content_wrapper {
+  justify-content: space-around;
+  display: flex;
+  text-align: center;
+}
+
+.ico_p_wrapper {
+  width: 50%;
+  font-size: larger;
+}
+
+.mouse_ico {
+  width: 50%;
+  height: auto;
+}
+
+
+
+
+@media only screen and (max-device-width: 320px) {
+  .card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-device-width: 768px) {
+
+  .card {}
+
+  .card-header {
+    font-size: small;
+  }
+
+  .card_content_p {
+    font-size: small;
+  }
+
+  .card_content_wrapper {
+    font-size: small;
+  }
+
+  .ico_p_wrapper {
+    font-size: small;
+  }
+
+}
+
+@media only screen and(max-device-width: 880px) {
+  .card {}
+}
+
+@media only screen and (max-device-height: 896px) {
+  .card {
+    width: 70vw;
+    height: 70vh;
+  }
+}
+
+
+@media only screen and (max-device-width: 900px) {
+
+  .card {
+    height: 70vh;
+
+  }
+}
+
+@media only screen and (max-device-width: 1439px) {
+
+  .card {
+    height: 70vh;
+  }
+
+  .card-header {
+    font-size: x-large;
+  }
+
+  .card_content_p {
+    font-size: medium;
+  }
+
+  .card_content_wrapper {
+    font-size: medium;
+  }
+
+  .ico_p_wrapper {
+    font-size: medium;
+  }
+
 }

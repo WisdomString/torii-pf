@@ -1,25 +1,27 @@
 import filePath from './SET2.glb'
-import React, { Suspense, useRef, useState } from 'react'
-import { Html, useGLTF, OrbitControls, Loader, PerspectiveCamera, shaderMaterial } from '@react-three/drei'
+import React, { Suspense, useRef } from 'react'
+import { useGLTF, OrbitControls, Loader, PerspectiveCamera, shaderMaterial } from '@react-three/drei'
 
 import { Canvas, extend, useFrame } from '@react-three/fiber'
 import { Color, AdditiveBlending } from 'three'
 import glsl from 'babel-plugin-glsl/macro'
-//import { useSpring, config } from 'react-spring'
-import { Howl } from 'howler';
-import Riviere from './music/Riviere.mp3'
+
+import Lantern from './Lanterns.js'
+import Lantern1 from './Lanterns1.js'
+import Lantern2 from './Lanterns2.js'
+import Lantern3 from './Lanterns3.js'
+import Lantern4 from './Lanterns4.js'
+import Lantern5 from './Lanterns5.js'
+
+import MusicPlay from './MusicPlay.js'
+import './App.css';
+
 
 function Model({ ...props }) {
-  var sound = new Howl({
-    src: [Riviere],
-    volume: 0.5,
-  });
-  sound.once();
-
   const group = useRef()
   const { nodes, materials } = useGLTF(filePath)
-  const [hovered, setHover] = useState(false)
-  const [active, setActive] = useState(false)
+
+
 
   const portalMaterial = useRef()
   useFrame((state, delta) => (portalMaterial.current.uTime += delta))
@@ -46,17 +48,17 @@ function Model({ ...props }) {
       </mesh>
 
       <mesh geometry={nodes['rock-with_bonsai001'].geometry} material={materials.OH_Outline_Material} position={[-0.46, 0.81, 1.06]} rotation={[0.57, 1.56, -0.57]} scale={[0.2, 0.14, 0.17]} />
-      <group position={[-0.39, 1.2, 1.05]} rotation={[0.7, 1.52, -0.77]} scale={[0.2, 0.14, 0.17]}>
+      <group position={[1.61, 1.03, 1.05]} rotation={[0.7, 1.52, -0.77]} scale={[0.2, 0.14, 0.17]}>
         <mesh geometry={nodes.Icosphere014.geometry} material={materials.OH_Outline_Material} />
         <mesh geometry={nodes.Icosphere014_1.geometry} material={materials['small-tree']} />
+      </group>
+      <group position={[1.60, 1.33, 1]} rotation={[-Math.PI, 0, 0]}>
+        <mesh geometry={nodes.Sphere005_1.geometry} material={materials['bonsai-leaves']} />
+        <mesh geometry={nodes.Sphere005_2.geometry} material={materials.OH_Outline_Material} />
       </group>
       <group position={[-0.76, 0.95, 1.33]} rotation={[3.14, 0.73, 3.14]} scale={0.95}>
         <mesh geometry={nodes.Icosphere016.geometry} material={materials['base-grey_rock']} />
         <mesh geometry={nodes.Icosphere016_1.geometry} material={materials.OH_Outline_Material} />
-      </group>
-      <group position={[-0.38, 1.51, 1]} rotation={[-Math.PI, 0, 0]}>
-        <mesh geometry={nodes.Sphere005_1.geometry} material={materials['bonsai-leaves']} />
-        <mesh geometry={nodes.Sphere005_2.geometry} material={materials.OH_Outline_Material} />
       </group>
       <group position={[0.62, 0.75, 0.98]} rotation={[-Math.PI, 1.52, -Math.PI]}>
         <mesh geometry={nodes.Plane002.geometry} material={materials['blue-water']} />
@@ -295,13 +297,7 @@ function Model({ ...props }) {
       <group
         position={[1.67, 1.12, -0.7]}
         rotation={[0, 1.29, 0]}
-        onPointerOver={(event) => setHover(true)}
-        onPointerOut={(event) => setHover(false)}
-        onClick={() => setActive(!active)}
-        scale={hovered ? '0.1' : '0.07'}>
-        <Html style={{ display: active ? 'block' : 'none' }}>
-          <h1>hello</h1>
-        </Html>
+        scale={0.07}>
         <mesh geometry={nodes.Cube002.geometry} material={materials['jap-hand-paint-pattern']} />
         <mesh geometry={nodes.Cube002_1.geometry} material={materials['lamp-top-black']} />
         <mesh geometry={nodes.Cube002_2.geometry} material={materials.OH_Outline_Material} />
@@ -316,7 +312,7 @@ function Model({ ...props }) {
         <mesh geometry={nodes.Cylinder002.geometry} material={materials['grass-color']} />
         <mesh geometry={nodes.Cylinder002_1.geometry} material={materials.OH_Outline_Material} />
       </group>
-      <group position={[-0.09, 1.67, -0.19]} rotation={[0, 1.05, -Math.PI]} scale={[0.46, 0.74, 0.46]}>
+      <group position={[1.30, 1.67, 0.05]} rotation={[0, 1.05, -Math.PI]} scale={[0.46, 0.74, 0.46]}>
         <mesh geometry={nodes.Plane019.geometry} material={materials['base-brown_dirt']} />
         <mesh geometry={nodes.Plane019_1.geometry} material={materials.OH_Outline_Material} />
       </group>
@@ -367,12 +363,18 @@ useGLTF.preload(filePath)
 export default function Canvasviewport() {
   return (
     <>
-
+      <MusicPlay />
       <Canvas >
         <Suspense fallback={null}>
-          <PerspectiveCamera position={[0, -1.2, -1]} fov={70} >
+          <PerspectiveCamera position={[-0.7, -1, 1]} rotation={[0, 44.7, 0]} fov={70} >
             <OrbitControls />
-            <Model ></Model>
+            <Model></Model>
+            <Lantern></Lantern>
+            <Lantern1></Lantern1>
+            <Lantern2></Lantern2>
+            <Lantern3></Lantern3>
+            <Lantern4></Lantern4>
+            <Lantern5></Lantern5>
           </PerspectiveCamera>
         </Suspense>
       </Canvas>

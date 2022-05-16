@@ -20,6 +20,8 @@
     "react-scripts": "5.0.1",
     "react-sound": "^1.2.0",
     "react-spring": "^9.4.4",
+    "react-tweet-embed": "^2.0.0",
+    "react-twitter-embed": "^4.0.4",
     "three": "^0.139.2",
     "web-vitals": "^2.1.4"
   },
