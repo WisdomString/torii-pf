@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "/torii-pf/static/css/main.a31ecd1b.css",
-    "main.js": "/torii-pf/static/js/main.d67ce2b8.js",
+    "main.css": "/torii-pf/static/css/main.18fff72f.css",
+    "main.js": "/torii-pf/static/js/main.e3e5ca36.js",
     "static/js/787.5e31bf6a.chunk.js": "/torii-pf/static/js/787.5e31bf6a.chunk.js",
     "static/media/pastel_sky.jpg": "/torii-pf/static/media/pastel_sky.e713f855d70cf1236237.jpg",
     "static/media/SET2.glb": "/torii-pf/static/media/SET2.f7d00d6fc1aa5ffb5c54.glb",
+    "static/media/Riviere.mp3": "/torii-pf/static/media/Riviere.d8e1eb9fc6a34c320440.mp3",
     "static/media/lanterns.glb": "/torii-pf/static/media/lanterns.ad4a0a3367b330dca9db.glb",
+    "static/media/left_mouse.png": "/torii-pf/static/media/left_mouse.1323778a8bcdff450b19.png",
     "static/media/caviar_dreams.woff": "/torii-pf/static/media/caviar_dreams.1852684caf21dcf9c9d1.woff",
+    "static/media/right_mouse.png": "/torii-pf/static/media/right_mouse.76eaab774f0aaadf0402.png",
     "index.html": "/torii-pf/index.html",
-    "main.a31ecd1b.css.map": "/torii-pf/static/css/main.a31ecd1b.css.map",
-    "main.d67ce2b8.js.map": "/torii-pf/static/js/main.d67ce2b8.js.map",
+    "main.18fff72f.css.map": "/torii-pf/static/css/main.18fff72f.css.map",
+    "main.e3e5ca36.js.map": "/torii-pf/static/js/main.e3e5ca36.js.map",
     "787.5e31bf6a.chunk.js.map": "/torii-pf/static/js/787.5e31bf6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a31ecd1b.css",
-    "static/js/main.d67ce2b8.js"
+    "static/css/main.18fff72f.css",
+    "static/js/main.e3e5ca36.js"
   ]
 }
