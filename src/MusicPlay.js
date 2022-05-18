@@ -15,7 +15,7 @@ export default function MusicPlay() {
         <>
             <span
                 onClick={(event => setmusic(!music))}>
-                <p style={{ display: music ? 'none' : 'fixed', margin: '0', cursor: 'default', color: 'white' }} onClick={handleClick}>want to play music?⭕</p>
+                <p style={{ display: music ? 'none' : 'fixed', margin: '0', cursor: 'default', color: 'white', textAlign: "center", width: "auto" }} onClick={handleClick}>want to play music?⭕</p>
             </span>
         </>)
 }

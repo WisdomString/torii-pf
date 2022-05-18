@@ -38,22 +38,11 @@ export default function Lantern({ ...props }) {
                 <Html style={{ display: active ? 'block' : 'none', }}>
                     <div className='card'>
                         <div className='card-header'>
-                            My name is Vince Ivan and this is my portfolio
+                            My Educational Background
                         </div>
-                        <p className='card_content_p'>Instructions to navigate around</p>
-                        <div className='card_content_wrapper'>
-                            <div className='ico_p_wrapper'><img src={null} alt='ico' className='mouse_ico' />
-                                <p className='ico_p'>Left click to Navigate</p>
-                            </div>
-                            <div className='ico_p_wrapper'><img src={null} alt='ico' className='mouse_ico' />
-                                <p className='ico_p'>Right click to Span</p>
-                            </div>
-                        </div>
-                        <p className='card_content_p'>You can also use scroll to zoom in and out</p>
-                        <p className='card_content_p'>
-                            <strong>as for mobile phone users</strong>
-                        </p>
-                        <p className='card_content_p'>swipe to navigate and pinch to zoom in and out</p>
+                        <p className='card_content_p'>I finished my college degree at Holy Trinity College with the course of BSCPE</p>
+                        <p className='card_content_p'><strong>Bachelor of Science in Computer Engineering</strong></p>
+                        <p className='card_content_p'>on October 25 2021</p>
                     </div >
                 </Html>
 

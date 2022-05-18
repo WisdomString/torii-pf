@@ -1,6 +1,6 @@
 import filePath from './SET2.glb'
 import React, { Suspense, useRef } from 'react'
-import { useGLTF, OrbitControls, Loader, PerspectiveCamera, shaderMaterial } from '@react-three/drei'
+import { useGLTF, OrbitControls, Html, PerspectiveCamera, shaderMaterial, useProgress, Loader } from '@react-three/drei'
 
 import { Canvas, extend, useFrame } from '@react-three/fiber'
 import { Color, AdditiveBlending } from 'three'
@@ -13,7 +13,7 @@ import Lantern3 from './Lanterns3.js'
 import Lantern4 from './Lanterns4.js'
 import Lantern5 from './Lanterns5.js'
 
-import MusicPlay from './MusicPlay.js'
+
 import './App.css';
 
 
@@ -358,14 +358,21 @@ extend({
 
 useGLTF.preload(filePath)
 
-
+function Load() {
+  const { Model, Lantern, Lantern1, Lantern2, Lantern3, Lantern4, Lantern5 } = useProgress()
+  return (
+    <>
+      <Html center>
+        <h2 className='loading_mesg' style={{ fontFamily: "caviar", textAllign: "center", display: "flex", width: "20vw", height: "20vh", justifyContent: "center" }}>
+          {Model}{Lantern}{Lantern1}{Lantern2}{Lantern3}{Lantern4}{Lantern5}LOADING ISLAND</h2 >
+      </Html></>)
+}
 
 export default function Canvasviewport() {
   return (
     <>
-      <MusicPlay />
       <Canvas >
-        <Suspense fallback={null}>
+        <Suspense fallback={<Load />}>
           <PerspectiveCamera position={[-0.7, -1, 1]} rotation={[0, 44.7, 0]} fov={70} >
             <OrbitControls />
             <Model></Model>

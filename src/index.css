@@ -19,14 +19,15 @@ body {
 
 .card {
   height: 70vh;
-  width: 50vw;
+  width: 40vw;
   font-family: caviar;
+  pointer-events: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 
-  backdrop-filter: blur(25px) saturate(200%);
-  -webkit-backdrop-filter: blur(25px) saturate(200%);
-  background-color: rgba(255, 255, 255, 0.33);
-  border-radius: 12px;
-  border: 1px solid rgba(209, 213, 219, 0.3);
 
 }
 
@@ -40,6 +41,19 @@ body {
   text-align: center;
   font-size: xx-large;
   margin-top: 2%;
+
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
+.specials {
+  pointer-events: all;
+  user-select: all;
+  text-decoration: none;
+  color: black;
 }
 
 .card_content_p {
@@ -48,12 +62,23 @@ body {
   text-align: center;
   display: 'flex';
   font-size: x-large;
+
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
 .card_content_wrapper {
   justify-content: space-around;
   display: flex;
   text-align: center;
+  backdrop-filter: blur(25px) saturate(200%);
+  -webkit-backdrop-filter: blur(25px) saturate(200%);
+  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
 .ico_p_wrapper {
@@ -71,7 +96,7 @@ body {
 
 @media only screen and (max-device-width: 320px) {
   .card {
-    width: 50%;
+    width: 60%;
   }
 }
 
@@ -113,7 +138,6 @@ body {
 
   .card {
     height: 70vh;
-
   }
 }
 
