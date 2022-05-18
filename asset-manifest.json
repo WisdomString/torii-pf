@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/torii-pf/static/css/main.bd6d16c8.css",
-    "main.js": "/torii-pf/static/js/main.539dc4d6.js",
+    "main.js": "/torii-pf/static/js/main.76aeb74b.js",
     "static/js/787.5e31bf6a.chunk.js": "/torii-pf/static/js/787.5e31bf6a.chunk.js",
     "static/media/pastel_sky.jpg": "/torii-pf/static/media/pastel_sky.e713f855d70cf1236237.jpg",
     "static/media/SET2.glb": "/torii-pf/static/media/SET2.f7d00d6fc1aa5ffb5c54.glb",
@@ -17,11 +17,11 @@
     "static/media/right_mouse.png": "/torii-pf/static/media/right_mouse.76eaab774f0aaadf0402.png",
     "index.html": "/torii-pf/index.html",
     "main.bd6d16c8.css.map": "/torii-pf/static/css/main.bd6d16c8.css.map",
-    "main.539dc4d6.js.map": "/torii-pf/static/js/main.539dc4d6.js.map",
+    "main.76aeb74b.js.map": "/torii-pf/static/js/main.76aeb74b.js.map",
     "787.5e31bf6a.chunk.js.map": "/torii-pf/static/js/787.5e31bf6a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bd6d16c8.css",
-    "static/js/main.539dc4d6.js"
+    "static/js/main.76aeb74b.js"
   ]
 }
