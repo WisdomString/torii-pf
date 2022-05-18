@@ -1,22 +1,27 @@
 {
   "files": {
-    "main.css": "/torii-pf/static/css/main.c86764e4.css",
-    "main.js": "/torii-pf/static/js/main.afb8c722.js",
+    "main.css": "/torii-pf/static/css/main.bd6d16c8.css",
+    "main.js": "/torii-pf/static/js/main.539dc4d6.js",
     "static/js/787.5e31bf6a.chunk.js": "/torii-pf/static/js/787.5e31bf6a.chunk.js",
     "static/media/pastel_sky.jpg": "/torii-pf/static/media/pastel_sky.e713f855d70cf1236237.jpg",
     "static/media/SET2.glb": "/torii-pf/static/media/SET2.f7d00d6fc1aa5ffb5c54.glb",
+    "static/media/ice.png": "/torii-pf/static/media/ice.f5e2fa42957fcf735da7.png",
     "static/media/Riviere.mp3": "/torii-pf/static/media/Riviere.d8e1eb9fc6a34c320440.mp3",
+    "static/media/pr-1.jpg": "/torii-pf/static/media/pr-1.d7c95d23e4fefaf9c935.jpg",
+    "static/media/vince-b.jpg": "/torii-pf/static/media/vince-b.23b7fa1e01927eaa51d9.jpg",
     "static/media/lanterns.glb": "/torii-pf/static/media/lanterns.ad4a0a3367b330dca9db.glb",
+    "static/media/cubelogo.PNG": "/torii-pf/static/media/cubelogo.3cabb4f446d337e7e256.PNG",
+    "static/media/applepic.jpg": "/torii-pf/static/media/applepic.fca9e1d8fd83fd3e22d2.jpg",
     "static/media/left_mouse.png": "/torii-pf/static/media/left_mouse.1323778a8bcdff450b19.png",
     "static/media/caviar_dreams.woff": "/torii-pf/static/media/caviar_dreams.1852684caf21dcf9c9d1.woff",
     "static/media/right_mouse.png": "/torii-pf/static/media/right_mouse.76eaab774f0aaadf0402.png",
     "index.html": "/torii-pf/index.html",
-    "main.c86764e4.css.map": "/torii-pf/static/css/main.c86764e4.css.map",
-    "main.afb8c722.js.map": "/torii-pf/static/js/main.afb8c722.js.map",
+    "main.bd6d16c8.css.map": "/torii-pf/static/css/main.bd6d16c8.css.map",
+    "main.539dc4d6.js.map": "/torii-pf/static/js/main.539dc4d6.js.map",
     "787.5e31bf6a.chunk.js.map": "/torii-pf/static/js/787.5e31bf6a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c86764e4.css",
-    "static/js/main.afb8c722.js"
+    "static/css/main.bd6d16c8.css",
+    "static/js/main.539dc4d6.js"
   ]
 }
