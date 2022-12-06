@@ -44,13 +44,11 @@ export default function Lantern({ ...props }) {
                         <div className='card-header'>
                             About Me
                         </div>
-                        <p className='card_content_p'>Well, im just a web UI freelancer from fiiver.com that just graduated last year.
-                            I don't have enough experience yet but i can adapt fast in any tech related environment.
-                            I do have skills but I know im still lacking hence even after graduating/getting credentials, I still continue honing my skills and study again via tutorials or online courses, well what could i do when it's still pandemic outbreak.
-                            Rightnow im still looking for a direction in life that i could fit in perfectly.
-                            By the way, im still learning new things while building this website.
-                            Even now im still working on media queries on this site's CSS, that's why its still clungky but hey! it works on most devices.
-                            You can check my skills from other lanterns. Just keep pressing things , you might find some easter eggs i hid</p>
+                        <p className='card_content_p'>
+My name is Vince Ivan, Im a graduate of Computer Engineering from HTC.Currently working as a Tech Support Engineer at Calltek Gensan.
+I do apologize for this website's controls, I'm still learning to make responsive controls. Heck even this website's CSS codes is a bit wonky too.
+Anyways, I created this portfolio website to show atleast some of my skills in web development. Click other Lanterns to see more info about me...
+Haven't updated this website for a while and will resume this project if i had tine </p>
                     </div >
                 </Html>
             </animated.group>
